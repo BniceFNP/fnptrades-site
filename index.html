@@ -61,7 +61,7 @@ p{margin:0;max-width:62ch}
 .hdr .wrap{display:flex;align-items:center;gap:14px;padding-block:14px}
 .brand{font:400 15px/1 var(--display);color:var(--t1);letter-spacing:-.01em;display:flex;gap:10px;align-items:center}
 .brand s{text-decoration:none;color:var(--t4)}
-.nav{display:flex;gap:26px;margin-left:auto;margin-right:4px;font-size:14.5px;font-weight:400;color:var(--t3)}
+.nav{display:flex;gap:16px;margin-left:auto;margin-right:4px;font-size:13.5px;font-weight:400;color:var(--t3)}
 .nav a:hover{color:var(--t1)}
 
 /* sections */
@@ -214,7 +214,10 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
 .foot a:hover{color:var(--t1)}
 .legal{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.7;color:var(--t4);max-width:none}
 
+.scanner-mobile{display:none}
 @media (max-width:860px){
+  .scanner-mobile{display:block;flex-basis:100%;font-size:14px;color:var(--cyan)}
+  .hdr .wrap{flex-wrap:wrap}
   .nav{display:none}
   .hdr .wrap{justify-content:flex-start}
   .brand{margin-right:auto}
@@ -237,10 +240,11 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
 <header class="hdr"><div class="wrap">
   <a class="brand" href="#top">PrintSquad <s>|</s> BNice_FNP</a>
   <nav class="nav" aria-label="Sections">
-    <a href="#mentorship">Mentorship</a><a href="#brandon">Brandon</a><a href="#wins">Wins</a><a href="#morning">The community</a>
+    <a href="#mentorship">Mentorship</a><a href="#brandon">Brandon</a><a href="#wins">Wins</a><a href="#morning">The community</a><a href="https://rtp-member-portal-production.up.railway.app/">Member Scanner ↗</a>
   </nav>
   <a class="btn btn-ghost btn-sm" href="https://whop.com/masterthemarket?a=bnicefnp">Join the community</a>
   <a class="btn btn-solid btn-sm" href="https://whop.com/checkout/plan_fq2FJMbQEy6Rq?a=chadcnoteroper">Lock in your spot</a>
+<a class="scanner-mobile" href="https://rtp-member-portal-production.up.railway.app/">Member Scanner ↗</a>
 </div></header>
 
 <main id="top">
@@ -384,6 +388,21 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
   </div>
 </div></section>
 
+<!-- Insert inside the existing fnptrades.com page. Reuses its existing styles. -->
+<section id="scanner" class="rule" aria-labelledby="scanner-heading">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The RTP system · PrintSquad members</span>
+      <h2 id="scanner-heading">Your scanner.<br><span class="dim">Inside your member workspace.</span></h2>
+      <p class="lede">Access the RTP scanner portal with your PrintSquad membership. Sign in securely with the Whop account you use for the community.</p>
+      <div class="cta">
+        <a class="btn btn-solid" href="https://rtp-member-portal-production.up.railway.app/">Open member scanner <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="note">Eligible grandfathered memberships are included. PrintSquad Free Education alone does not include scanner access. The portal shows the current feed availability.</p>
+    </div>
+  </div>
+</section>
+
 <section id="morning" class="rule"><div class="wrap">
   <div class="head">
     <span class="eyebrow">The community</span>
@@ -459,7 +478,7 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
 <footer><div class="wrap">
   <div class="foot">
     <div><div class="brand" style="margin-bottom:14px">PrintSquad <s>|</s> BNice_FNP</div><p style="font-size:14px;color:var(--t3)">An online educational community covering personal finances, trading, career development and life education through curated mentorship programs.</p></div>
-    <div><h4>Explore</h4><ul><li><a href="#mentorship">The mentorship</a></li><li><a href="#brandon">About Brandon</a></li><li><a href="#wins">Wins</a></li><li><a href="#morning">The community</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="#mentorship">The mentorship</a></li><li><a href="#brandon">About Brandon</a></li><li><a href="#wins">Wins</a></li><li><a href="#morning">The community</a></li><li><a href="https://rtp-member-portal-production.up.railway.app/">Member Scanner ↗</a></li></ul></div>
     <div><h4>Join</h4><ul><li><a href="https://whop.com/checkout/plan_fq2FJMbQEy6Rq?a=chadcnoteroper">Master The Market mentorship</a></li><li><a href="https://whop.com/masterthemarket?a=bnicefnp">Community on Whop</a></li><li><a href="https://whop.com/masterthemarket/printsquad-fnp-trades-bets/">The PrintSquad</a></li><li><a href="https://www.instagram.com/bnice_fnp/">Instagram</a></li><li><a href="https://x.com/fnptrades">X</a></li><li><a href="https://linktr.ee/FNPTrades">Linktree</a></li></ul></div>
   </div>
   <p class="legal">DISCLAIMER. PrintSquad | BNice_FNP / FNP Trades provides educational content only and is not financial, investment, or trading advice. Trading options and securities involves substantial risk of loss and is not suitable for every investor. Results shown are not typical and past performance is not indicative of future results. You are solely responsible for your own trading decisions.<br>Copyright © 2026. All Rights Reserved.</p>
