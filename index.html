@@ -219,7 +219,7 @@ section{padding-block:clamp(72px,10vw,132px)}
 .close .wrap{display:grid;gap:26px}
 
 footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;color:var(--t3)}
-.foot{display:grid;gap:36px;grid-template-columns:minmax(0,2fr) repeat(2,minmax(0,1fr))}
+.foot{display:grid;gap:36px;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr))}
 .foot h4{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--t4);margin:0 0 14px}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .foot a:hover{color:var(--t1)}
@@ -239,23 +239,64 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
 @media (prefers-reduced-motion:reduce){
   .tape-track{animation:none} html{scroll-behavior:auto} .btn{transition:none}
 }
+
+/* tools I use and affiliates */
+.tools{display:grid;gap:14px}
+.tool{border:1px solid var(--line-2);border-radius:16px;padding:clamp(22px,3vw,34px);background:var(--panel);display:grid;gap:16px;align-content:start}
+.tool .k{font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--t3);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.tool h3{font:300 clamp(22px,2.4vw,28px)/1.18 var(--display);letter-spacing:-.02em}
+.tool p{font-size:15.5px;color:var(--t3)}
+.tool ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px;color:var(--t2)}
+.tool li{padding-left:18px;position:relative}
+.tool li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--gold)}
+.tool .btn{justify-self:start}
+.tool-feature{grid-template-columns:minmax(0,6fr) minmax(0,7fr);gap:clamp(24px,4vw,48px);align-items:center;background:linear-gradient(150deg,rgba(245,197,24,.09),var(--panel) 45%);border-color:rgba(245,197,24,.28)}
+.tool-copy{display:grid;gap:16px}
+.tool-visual{margin:0;display:grid;gap:10px}
+.tool-visual svg,.tool-shot{width:100%;height:auto;border-radius:12px;border:1px solid var(--line-2);display:block}
+.tool-visual figcaption{font:400 11.5px/1.5 var(--mono);color:var(--t4);letter-spacing:.04em}
+.deal{font:500 10.5px/1 var(--mono);letter-spacing:.12em;color:#07090B;background:var(--gold);border-radius:4px;padding:4px 8px}
+.deal.cy{background:var(--cyan)}
+.wordmark{font:400 clamp(20px,2vw,24px)/1.1 var(--display);letter-spacing:-.01em;color:var(--t1)}
+.tool-feature:not(:has(.tool-shot)){grid-template-columns:minmax(0,1fr)}
+.tool-feature:not(:has(.tool-shot)) .tool-copy{max-width:720px}
+.brandmark{display:inline-flex;align-items:center;gap:12px}
+.brandlogo{height:40px;width:40px;object-fit:contain;border-radius:10px;display:block;flex:none}
+.tool-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.props-head{display:grid;gap:12px;margin-top:clamp(40px,5vw,64px);margin-bottom:6px}
+.props-head h3{font:300 clamp(24px,2.8vw,32px)/1.15 var(--display);letter-spacing:-.02em}
+.props{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.tool-first{border-color:rgba(47,227,246,.32);background:linear-gradient(160deg,rgba(47,227,246,.08),var(--panel) 55%)}
+.coupon{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border:1px dashed var(--line-2);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.02)}
+.coupon .lbl{font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--t4)}
+.coupon code{font:500 22px/1 var(--mono);letter-spacing:.12em;color:var(--t1)}
+.coupon button{margin-left:auto;font:500 12px/1 var(--mono);letter-spacing:.08em;color:var(--t1);background:transparent;border:1px solid var(--line-2);border-radius:8px;padding:8px 12px;cursor:pointer}
+.coupon button:hover{border-color:var(--t3)}
+.coupon .off{flex-basis:100%;font:400 12px/1.4 var(--mono);color:var(--t3)}
+.sister{margin-top:14px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;padding:22px 28px;border:1px solid var(--line);border-radius:16px;background:var(--ground-2)}
+.sister div{display:grid;gap:6px;margin-right:auto}
+.sister strong{display:block;margin-top:4px}
+.sister .brandlogo{height:64px;width:64px;border-radius:12px}
+.sister p{font-size:14.5px;color:var(--t3)}
+.aff-note{margin-top:22px}
+@media (max-width:860px){.tool-feature,.props{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 
 <div class="tape" aria-hidden="true"><div class="tape-track">
-  <span><b>LEVELS POSTED</b> 7:00 AM ET</span><span><b>76 NAMES</b> SCANNED DAILY</span><span><b>SPY · QQQ · IWM</b> EVERY MORNING</span><span><b>DAILY + WEEKLY</b> SETUPS</span><span>LIVE GUIDANCE <i>● ON</i></span><span><b>TRADING</b> SINCE 2020</span>
-  <span><b>LEVELS POSTED</b> 7:00 AM ET</span><span><b>76 NAMES</b> SCANNED DAILY</span><span><b>SPY · QQQ · IWM</b> EVERY MORNING</span><span><b>DAILY + WEEKLY</b> SETUPS</span><span>LIVE GUIDANCE <i>● ON</i></span><span><b>TRADING</b> SINCE 2020</span>
+  <span><b>LEVELS POSTED</b> 7:00 AM ET</span><span><b>76 NAMES</b> SCANNED DAILY</span><span><b>SPY · QQQ · IWM</b> EVERY MORNING</span><span><b>DAILY + WEEKLY</b> SETUPS</span><span>LIVE GUIDANCE <i>● ON</i></span><span><b>TRADING</b> SINCE 2020</span><span><b>30% OFF</b> SKYLIT HEATSEEKER</span><span><b>CODE FNP</b> TRADEIFY</span>
+  <span><b>LEVELS POSTED</b> 7:00 AM ET</span><span><b>76 NAMES</b> SCANNED DAILY</span><span><b>SPY · QQQ · IWM</b> EVERY MORNING</span><span><b>DAILY + WEEKLY</b> SETUPS</span><span>LIVE GUIDANCE <i>● ON</i></span><span><b>TRADING</b> SINCE 2020</span><span><b>30% OFF</b> SKYLIT HEATSEEKER</span><span><b>CODE FNP</b> TRADEIFY</span>
 </div></div>
 
 <header class="hdr"><div class="wrap">
   <a class="brand" href="#top">PrintSquad <s>|</s> BNice_FNP</a>
   <nav class="nav" aria-label="Sections">
-    <a href="#mentorship">Mentorship</a><a href="#brandon">Brandon</a><a href="#wins">Wins</a><a href="#morning">The community</a><a href="https://rtp-member-portal-production.up.railway.app/">Member Scanner ↗</a>
+    <a href="#mentorship">Mentorship</a><a href="#brandon">Brandon</a><a href="#wins">Wins</a><a href="#morning">Community</a><a href="#tools">Tools</a><a href="#scanner">Member Sign In</a>
   </nav>
   <a class="btn btn-ghost btn-sm" href="#join">Get Access</a>
   <a class="btn btn-solid btn-sm" href="https://whop.com/checkout/plan_fq2FJMbQEy6Rq?a=chadcnoteroper">Lock in your spot</a>
-<div class="scanner-mobile"><a href="#join">Indicators &amp; Discord</a> · <a href="https://rtp-member-portal-production.up.railway.app/">Member Scanner ↗</a></div>
+<div class="scanner-mobile"><a href="#join">Indicators &amp; Discord</a> · <a href="#tools">Tools</a> · <a href="#scanner">Member Sign In</a></div>
 </div></header>
 
 <main id="top">
@@ -430,16 +471,17 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
 <section id="scanner" class="rule" aria-labelledby="scanner-heading">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow">The RTP system · PrintSquad members</span>
-      <h2 id="scanner-heading">Your scanner.<br><span class="dim">Inside your member workspace.</span></h2>
+      <span class="eyebrow">Member Sign In</span>
+      <h2 id="scanner-heading">Member Sign In.<br><span class="dim">Your RTP scanner and workspace.</span></h2>
       <p class="lede">Access the RTP scanner portal with your PrintSquad membership. Sign in securely with the Whop account you use for the community.</p>
       <div class="cta">
-        <a class="btn btn-solid" href="https://rtp-member-portal-production.up.railway.app/">Open member scanner <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-solid" href="https://rtp-member-portal-production.up.railway.app/">Sign in to the member scanner <span aria-hidden="true">↗</span></a>
       </div>
       <p class="note">Eligible grandfathered memberships are included. PrintSquad Free Education alone does not include scanner access. The portal shows the current feed availability.</p>
     </div>
   </div>
 </section>
+
 
 <section id="morning" class="rule"><div class="wrap">
   <div class="head">
@@ -487,6 +529,60 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
   </div>
 </div></section>
 
+
+<section id="tools" class="rule" aria-labelledby="tools-title"><div class="wrap">
+  <div class="head">
+    <span class="eyebrow">Tools I use and Affiliates</span>
+    <h2 id="tools-title">The tools behind the plan, <span class="dim">and the best deals I could get you.</span></h2>
+    <p class="lede">This is what I use myself, every trading day. My links get you the lowest price I have found, and every sign up helps support the PrintSquad.</p>
+  </div>
+
+  <div class="tools">
+    <article class="tool tool-feature">
+      <div class="tool-copy">
+        <div class="tool-head"><span class="wordmark">Skylit.ai</span><span class="deal">30% off with my link</span></div>
+        <span class="k">Heatseeker · options positioning heat map</span>
+        <h3>See where the dealers are positioned before you take the trade.</h3>
+        <p>Heatseeker maps options gamma strike by strike, so you can see the levels price tends to get pinned to or pushed away from. The King node, the gatekeepers in the way, where the floor and the ceiling sit, and how the map shifts through the day.</p>
+        <p>It is the map I read every morning next to the RTP levels, and a big reason the room's targets land where they do.</p>
+        <ul>
+          <li>SPX, SPY, QQQ and single names</li>
+          <li>The King node and the gatekeepers in front of it</li>
+          <li>Floors and ceilings as they roll through the session</li>
+        </ul>
+        <a class="btn btn-solid" href="http://skylit.ai/@bnicefnp" target="_blank" rel="sponsored noopener">Get 30% off Skylit <span aria-hidden="true">↗</span></a>
+      </div>
+      <img class="tool-shot" src="assets/shot_skylit.jpg" alt="Skylit: trade the markets with Hyperintelligence" loading="lazy">
+    </article>
+  </div>
+
+  <div class="props-head">
+    <span class="eyebrow">My futures prop firms</span>
+    <h3>Trade the firm's capital, <span class="dim">not your savings.</span></h3>
+    <p class="lede">A funded futures account caps your downside at the evaluation fee and lets you trade size you could not fund on your own. These are the two I use, in order.</p>
+  </div>
+  <div class="props">
+    <article class="tool tool-first">
+      <div class="tool-head"><span class="brandmark"><img class="brandlogo" src="assets/logo_tradeify.svg" alt="" loading="lazy"><span class="wordmark">Tradeify</span></span><span class="deal cy">My #1 prop firm</span></div>
+      <p>My first choice for funded futures and where I send people first. Trade NQ, ES and the rest of the futures board on the firm's capital, with rules you can plan your trading around.</p>
+      <div class="coupon"><span class="lbl">Code</span><code>FNP</code><button type="button" data-code="FNP">Copy code</button><span class="off">The best deal available right now, usually 30 to 40% off</span></div>
+      <a class="btn btn-solid" href="https://tradeify.co/?ref=GKHED45U" target="_blank" rel="sponsored noopener">Get Tradeify <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="tool">
+      <div class="tool-head"><span class="brandmark"><img class="brandlogo" src="assets/logo_certa.jpg" alt="" loading="lazy"><span class="wordmark">Certa Futures</span></span><span class="deal cy">My second pick</span></div>
+      <p>My second choice for funded futures. Another solid program for trading futures on the firm's capital, and a good place to run a second account.</p>
+      <div class="coupon"><span class="lbl">Code</span><code>NICE</code><button type="button" data-code="NICE">Copy code</button><span class="off">The best deal available right now, usually 30 to 40% off</span></div>
+      <a class="btn btn-solid" href="https://www.certafutures.com/?checkout=1&amp;ref=CF534EED9A1739" target="_blank" rel="sponsored noopener">Get Certa Futures <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+
+  <div class="sister">
+    <div><span class="eyebrow">Our sister server</span><strong><span class="brandmark"><img class="brandlogo" src="assets/logo_stockjunkies.jpg" alt="" loading="lazy"><span class="wordmark">StockJunkies</span></span></strong><p>More traders and more eyes on the market, with the same mindset as the PrintSquad.</p></div>
+    <a class="btn btn-ghost" href="https://whop.com/checkout/plan_VsYedL4dfEl0D?a=bnicefnp" target="_blank" rel="noopener">Join StockJunkies <span aria-hidden="true">↗</span></a>
+  </div>
+  <p class="note aff-note">Affiliate links: I may earn a commission when you sign up, at no extra cost to you. Discounts are set by each company and can change.</p>
+</div></section>
+
 <section id="learn" class="rule"><div class="wrap">
   <div class="head">
     <span class="eyebrow">Learn</span>
@@ -516,10 +612,19 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;font-size:14px;c
 <footer><div class="wrap">
   <div class="foot">
     <div><div class="brand" style="margin-bottom:14px">PrintSquad <s>|</s> BNice_FNP</div><p style="font-size:14px;color:var(--t3)">An online educational community covering personal finances, trading, career development and life education through curated mentorship programs.</p></div>
-    <div><h4>Explore</h4><ul><li><a href="#mentorship">The mentorship</a></li><li><a href="#brandon">About Brandon</a></li><li><a href="#wins">Wins</a></li><li><a href="#morning">The community</a></li><li><a href="https://rtp-member-portal-production.up.railway.app/">Member Scanner ↗</a></li></ul></div>
-    <div><h4>Join</h4><ul><li><a href="#join">RTP Indicators &amp; Discord</a></li><li><a href="https://whop.com/checkout/plan_fq2FJMbQEy6Rq?a=chadcnoteroper">Master The Market mentorship</a></li><li><a href="https://whop.com/masterthemarket?a=bnicefnp">Community on Whop</a></li><li><a href="https://whop.com/masterthemarket/printsquad-fnp-trades-bets/">The PrintSquad</a></li><li><a href="https://www.instagram.com/bnice_fnp/">Instagram</a></li><li><a href="https://x.com/fnptrades">X</a></li><li><a href="https://linktr.ee/FNPTrades">Linktree</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="#mentorship">The mentorship</a></li><li><a href="#brandon">About Brandon</a></li><li><a href="#wins">Wins</a></li><li><a href="#morning">The community</a></li><li><a href="#scanner">Member sign in</a></li><li><a href="#tools">Tools I use</a></li><li><a href="https://rtp-member-portal-production.up.railway.app/">Member Scanner ↗</a></li></ul></div>
+    <div><h4>Tools I use</h4><ul><li><a href="http://skylit.ai/@bnicefnp" target="_blank" rel="sponsored noopener">Skylit Heatseeker · 30% off</a></li><li><a href="https://tradeify.co/?ref=GKHED45U" target="_blank" rel="sponsored noopener">Tradeify · code FNP</a></li><li><a href="https://www.certafutures.com/?checkout=1&amp;ref=CF534EED9A1739" target="_blank" rel="sponsored noopener">Certa Futures · code NICE</a></li><li><a href="#tools">All tools and deals</a></li></ul></div>
+    <div><h4>Join</h4><ul><li><a href="#join">RTP Indicators &amp; Discord</a></li><li><a href="https://whop.com/checkout/plan_fq2FJMbQEy6Rq?a=chadcnoteroper">Master The Market mentorship</a></li><li><a href="https://whop.com/masterthemarket?a=bnicefnp">Community on Whop</a></li><li><a href="https://whop.com/masterthemarket/printsquad-fnp-trades-bets/">The PrintSquad</a></li><li><a href="https://whop.com/checkout/plan_VsYedL4dfEl0D?a=bnicefnp" target="_blank" rel="noopener">StockJunkies, our sister server</a></li><li><a href="https://www.instagram.com/bnice_fnp/">Instagram</a></li><li><a href="https://x.com/fnptrades">X</a></li><li><a href="https://linktr.ee/FNPTrades">Linktree</a></li></ul></div>
   </div>
   <p class="legal">DISCLAIMER. PrintSquad | BNice_FNP / FNP Trades provides educational content only and is not financial, investment, or trading advice. Trading options and securities involves substantial risk of loss and is not suitable for every investor. Results shown are not typical and past performance is not indicative of future results. You are solely responsible for your own trading decisions.<br>Copyright © 2026. All Rights Reserved.</p>
 </div></footer>
+<script>
+document.querySelectorAll(".coupon button").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy code"; }, 1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.code).then(done, done); else done();
+  });
+});
+</script>
 </body>
 </html>
