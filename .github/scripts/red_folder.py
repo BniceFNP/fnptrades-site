@@ -2,8 +2,9 @@
 this week and next, from the ForexFactory calendar feed.
 
 Runs inside GitHub Actions on the public site repo. Standard library only.
-Keeps the last good file when the feed is unreachable, so the page never
-goes blank because of one failed fetch.
+Writes only when both weeks' feeds come back (each gets one retry). If either
+fails, the last good file stays, so a half fetched calendar (this week without
+next week) never replaces a complete one and the page never goes blank.
 
     python .github/scripts/red_folder.py            # fetch and write
     RF_FEED_FILE=sample.json python ...              # read a local file instead (testing)
@@ -11,7 +12,7 @@ goes blank because of one failed fetch.
 import json
 import os
 import sys
-import urllib.error
+import time
 import urllib.request
 from datetime import datetime, timezone
 
@@ -21,6 +22,7 @@ FEEDS = [
 ]
 OUT = os.path.join("data", "red-folder.json")
 UA = "fnptrades.com red folder calendar (github actions)"
+RETRY_WAIT = 30  # seconds before a feed's one retry (the feed rate limits)
 
 
 def fetch(url):
@@ -30,23 +32,29 @@ def fetch(url):
 
 
 def load():
+    """All rows, and whether every feed came back."""
     local = os.environ.get("RF_FEED_FILE")
     if local:
-        return json.load(open(local, encoding="utf-8")), 1
-    rows, ok = [], 0
+        return json.load(open(local, encoding="utf-8")), True
+    rows, complete = [], True
     for url in FEEDS:
-        try:
-            rows += fetch(url)
-            ok += 1
-        except (urllib.error.URLError, urllib.error.HTTPError, ValueError, TimeoutError) as e:
-            print(f"warning: {url}: {e}", file=sys.stderr)
-    return rows, ok
+        for attempt in (1, 2):
+            try:
+                rows += fetch(url)
+                break
+            except (OSError, ValueError) as e:  # network errors, HTTP errors, a non JSON "request denied" page
+                print(f"warning: {url} (attempt {attempt}): {e}", file=sys.stderr)
+                if attempt == 1:
+                    time.sleep(RETRY_WAIT)
+        else:
+            complete = False
+    return rows, complete
 
 
 def main():
-    rows, ok = load()
-    if not ok:
-        print("feed unreachable, keeping the last good file", file=sys.stderr)
+    rows, complete = load()
+    if not complete:
+        print("a feed failed, keeping the last good file", file=sys.stderr)
         return 0
     seen, events = set(), []
     for r in rows:
