@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11T05:43:58Z",
+ "updated": "2026-10-13T02:35:30Z",
  "source": "ForexFactory calendar, USD, high impact",
  "events": [
   {
@@ -35,13 +35,13 @@
   {
    "title": "Core Retail Sales m/m",
    "date": "2026-10-15T08:30:00-04:00",
-   "forecast": "0.5%",
+   "forecast": "0.6%",
    "previous": "1.4%"
   },
   {
    "title": "PPI m/m",
    "date": "2026-10-15T08:30:00-04:00",
-   "forecast": "0.5%",
+   "forecast": "0.6%",
    "previous": "0.4%"
   },
   {
