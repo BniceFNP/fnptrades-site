@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://fnptrades.com/aiclass/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fnptrades.com/aiclass/">
+<meta property="og:title" content="Build your own AI team | Live class with BNice">
+<meta property="og:description" content="Saturday, Nov 7 at noon CT, live on Zoom. $50. Build AI agents that plan your day, research trends, draft your posts and run from your phone.">
+<meta property="og:image" content="https://fnptrades.com/aiclass/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Build Your Own AI Team</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Live class with Brandon “BNice” Robinson. Build AI agents that plan your day, research trends, draft your posts and run from your phone. Saturday, Nov 7, noon CT. $50.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: the class flyer as a page. Dotted cream ground, heavy black headlines with the lime band, the dark
+   "My AI Team" phone chat as the proof, one black ticket bar that repeats the date, price and the Stripe button.
+   Single look on purpose (his campaign cards are light), so every color is set explicitly. */
+:root {
+  --ground: #F3F0E7;
+  --dot: #DCD9D0;
+  --ink: #111111;
+  --ink-soft: #4B4B47;
+  --lime: #7FF27D;
+  --lime-deep: #1E9E45;
+  --paper: #FFFFFF;
+  --phone: #131417;
+  --bubble: #23252B;
+  --phone-text: #F4F4F5;
+  --phone-sub: #9A9CA3;
+  --live: #F03A2E;
+  --display: "Inter Tight", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+body {
+  margin: 0;
+  background-color: var(--ground);
+  background-image: radial-gradient(circle, var(--dot) 1.6px, transparent 2px);
+  background-size: 26px 26px;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+}
+.wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--lime-deep); outline-offset: 3px; border-radius: 6px; }
+
+.eyebrow { font-family: var(--body); font-weight: 700; font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink-soft); }
+.pill {
+  display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--paper);
+  border-radius: 999px; padding: 9px 18px 9px 14px; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.pill i { width: 12px; height: 12px; border-radius: 50%; background: var(--live); box-shadow: 0 0 0 3px rgba(240, 58, 46, 0.25); }
+.band { position: relative; white-space: nowrap; isolation: isolate; }
+.band::after {
+  content: ""; position: absolute; left: -0.04em; right: -0.06em; bottom: 0.02em; height: 0.4em; background: var(--lime); z-index: -1;
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 900; letter-spacing: -0.045em; line-height: 0.98; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(36px, 5.4vw, 60px); }
+p { margin: 0; }
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none;
+  background: var(--lime); color: var(--ink); font-family: var(--display); font-weight: 900; font-size: 20px; letter-spacing: -0.01em;
+  padding: 18px 30px; border-radius: 16px; border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+.btn .price { background: var(--ink); color: var(--lime); border-radius: 9px; padding: 3px 10px; font-size: 18px; }
+.fine { font-size: 14px; color: var(--ink-soft); }
+
+/* hero */
+header.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 26px 0; flex-wrap: wrap; }
+.hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; padding-block: 44px 72px; }
+.hero > * { min-width: 0; }
+.hero h1 { font-size: clamp(56px, 9vw, 112px); margin-top: 22px; }
+.hero .lede { font-size: clamp(18px, 2vw, 22px); color: var(--ink-soft); margin-top: 26px; max-width: 34ch; }
+.hero .lede b { color: var(--ink); }
+.when { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; font-family: var(--display); font-weight: 800; font-size: 18px; }
+.when span { background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; padding: 6px 16px; white-space: nowrap; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; margin-top: 34px; }
+
+/* phone */
+.phone {
+  background: var(--phone); border: 6px solid #2A2B30; border-radius: 52px; padding: 22px 22px 18px; color: var(--phone-text);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25), 0 0 120px rgba(127, 242, 125, 0.35); transform: rotate(1.6deg);
+  max-width: 440px; margin-left: auto; width: 100%;
+}
+.status { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; padding: 0 10px; }
+.chathead { display: flex; align-items: center; gap: 14px; padding: 16px 4px 16px; border-bottom: 1px solid #2A2C31; }
+.stack { display: flex; }
+.stack img { width: 38px; height: 38px; border-radius: 50%; border: 3px solid var(--phone); }
+.stack img + img { margin-left: -13px; }
+.chathead b { display: block; font-family: var(--display); font-size: 21px; letter-spacing: -0.01em; }
+.chathead small { color: var(--lime); font-weight: 600; font-size: 13px; }
+.msgs { display: flex; flex-direction: column; gap: 14px; padding: 16px 2px 14px; }
+.msg { display: flex; gap: 11px; align-items: flex-start; animation: pop 0.5s cubic-bezier(.2, 1.4, .4, 1) both; }
+.msg img { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; }
+.msg > div { min-width: 0; }
+.who { font-size: 14px; font-weight: 700; }
+.who em { font-style: normal; font-weight: 500; color: var(--phone-sub); font-size: 12.5px; margin-left: 6px; }
+.bubble { background: var(--bubble); border-radius: 16px; padding: 9px 13px; font-size: 14.5px; line-height: 1.35; margin-top: 5px; }
+.me { align-self: flex-end; background: var(--lime); color: var(--ink); font-weight: 700; border-radius: 16px; padding: 10px 15px; font-size: 15px; animation: pop 0.5s cubic-bezier(.2, 1.4, .4, 1) both; }
+.compose { background: #1D1F24; color: #6E7078; border-radius: 999px; padding: 12px 18px; font-size: 14px; }
+.msg:nth-child(1) { animation-delay: 0.15s; } .msg:nth-child(2) { animation-delay: 0.45s; }
+.msg:nth-child(3) { animation-delay: 0.75s; } .msg:nth-child(4) { animation-delay: 1.05s; } .me { animation-delay: 1.4s; }
+@keyframes pop { from { transform: translateY(14px) scale(0.94); } to { transform: none; } }
+
+/* sections */
+section { padding-block: 72px; }
+.sec-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; max-width: 760px; }
+.sec-head p { font-size: 19px; color: var(--ink-soft); }
+
+/* his team */
+.team { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.agent { background: var(--paper); border-radius: 26px; padding: 22px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.07); }
+.agent img { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; }
+.agent > div { min-width: 0; }
+.agent h3 { font-size: 24px; letter-spacing: -0.02em; line-height: 1.1; }
+.agent .role { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4px; }
+.agent p { margin-top: 8px; color: var(--ink-soft); font-size: 16px; line-height: 1.45; }
+
+/* who it's for */
+.for { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.for article { background: var(--paper); border: 3px solid var(--ink); border-radius: 26px; padding: 26px 24px 28px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.for .tag { align-self: flex-start; font-size: 11.5px; padding: 7px 13px 7px 11px; }
+.for h3 { font-size: clamp(30px, 3vw, 36px); }
+.for p { color: var(--ink-soft); font-size: 16px; }
+.for .ping { margin-top: auto; background: var(--phone); color: var(--phone-text); border-radius: 18px; padding: 13px 15px; font-size: 14.5px; line-height: 1.4; }
+.for .ping b { display: block; font-size: 13px; margin-bottom: 3px; }
+
+/* what you'll build */
+.build { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; list-style: none; padding: 0; margin: 0; counter-reset: step; }
+.build li { display: flex; gap: 18px; align-items: center; font-size: 20px; font-weight: 600; line-height: 1.3; padding-block: 8px; counter-increment: step; }
+.build li::before {
+  content: counter(step); width: 48px; height: 48px; flex-shrink: 0; border-radius: 12px; background: var(--ink); color: var(--lime);
+  display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 22px;
+}
+
+/* host */
+.host { display: grid; grid-template-columns: auto 1fr; gap: 34px; align-items: center; background: var(--paper); border-radius: 32px; padding: 34px; box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08); }
+.host img { width: 170px; height: 170px; border-radius: 50%; box-shadow: 0 0 0 7px var(--lime); }
+.host > div { min-width: 0; }
+.host .eyebrow { color: var(--lime-deep); }
+.host h3 { font-size: clamp(30px, 4vw, 44px); margin-top: 8px; }
+.host p { margin-top: 12px; font-size: 18px; color: var(--ink-soft); max-width: 60ch; }
+
+/* ticket */
+.ticket {
+  background: var(--ink); color: var(--paper); border-radius: 32px; padding: 34px 40px; display: grid; grid-template-columns: auto auto 1fr;
+  gap: 22px 40px; align-items: center;
+}
+.ticket > * { min-width: 0; }
+.ticket .date { font-family: var(--display); font-weight: 900; font-size: clamp(38px, 5vw, 56px); letter-spacing: -0.04em; line-height: 1; }
+.ticket .date small { display: block; font-family: var(--body); font-size: 15px; letter-spacing: 0.22em; color: var(--lime); margin-top: 10px; font-weight: 800; }
+.ticket .amount { font-family: var(--display); font-weight: 900; font-size: clamp(64px, 8vw, 96px); letter-spacing: -0.06em; color: var(--lime); line-height: 0.9; padding-left: 40px; border-left: 2px solid #2C2D31; }
+.ticket .go { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.ticket .go .eyebrow { color: #B3B5BA; }
+.ticket .btn { border-color: var(--lime); box-shadow: 5px 5px 0 #2C2D31; }
+.ticket .btn:hover { box-shadow: 7px 7px 0 #2C2D31; }
+
+footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: var(--ink-soft); font-size: 14px; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 44px; padding-block: 28px 48px; }
+  .phone { margin: 0 auto; }
+  .for { grid-template-columns: 1fr; }
+  .team { grid-template-columns: repeat(2, 1fr); }
+  .team .agent:last-child { grid-column: 1 / -1; }
+  .agent { flex-direction: row; }
+  .build { grid-template-columns: 1fr; }
+  .ticket { grid-template-columns: 1fr auto; }
+  .ticket .go { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  section { padding-block: 52px; }
+  .host { grid-template-columns: 1fr; padding: 26px; gap: 22px; }
+  .host img { width: 120px; height: 120px; }
+  .ticket { grid-template-columns: 1fr; padding: 28px 24px; }
+  .team { grid-template-columns: 1fr; }
+  .ticket .amount { padding-left: 0; border-left: 0; }
+  .btn { width: 100%; }
+  .build li { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .msg, .me { animation: none; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">@BNICE_FNP presents</span>
+    <span class="pill"><i></i>Live class</span>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Build your own <span class="band">AI team.</span></h1>
+      <p class="lede">For creators, traders, nurses and business owners. <b>Agents that work like you, while you create.</b></p>
+      <div class="when"><span>Saturday, Nov 7</span><span>Noon CT</span><span>Live on Zoom</span></div>
+      <div class="cta-row">
+        <a class="btn" href="https://buy.stripe.com/cNiaEXfH996n0Qh7OR8og00" target="_blank" rel="noopener">Save your seat <span class="price">$50</span></a>
+        <span class="fine">Secure checkout with Stripe. After you pay, I'll email you the Zoom link.</span>
+      </div>
+    </div>
+
+    <div class="phone" aria-label="Example chat with an AI team">
+      <div class="status"><span>12:00</span><span>●●●● ▮</span></div>
+      <div class="chathead">
+        <div class="stack"><img src="img/terrell.png" alt=""><img src="img/radar.png" alt=""><img src="img/printer.png" alt=""><img src="img/sonar.png" alt=""></div>
+        <div><b>My AI Team</b><small>4 agents online</small></div>
+      </div>
+      <div class="msgs">
+        <div class="msg"><img src="img/terrell.png" alt="Terrell"><div><div class="who" style="color:#F2B33D">Terrell<em>Chief of Staff</em></div><div class="bubble">Morning boss. Today's plan is ready ✅</div></div></div>
+        <div class="msg"><img src="img/radar.png" alt="Radar"><div><div class="who" style="color:#4FA8F7">Radar<em>Research</em></div><div class="bubble">3 topics trending in your niche right now 📈</div></div></div>
+        <div class="msg"><img src="img/printer.png" alt="Printer"><div><div class="who" style="color:#B07CF5">Printer<em>Content</em></div><div class="bubble">Posts drafted for IG, X and Threads. Waiting on your OK 👀</div></div></div>
+        <div class="msg"><img src="img/sonar.png" alt="Sonar"><div><div class="who" style="color:#2FD3C0">Sonar<em>Tool Builder</em></div><div class="bubble">Built the tool you asked for 🛠️</div></div></div>
+        <div class="me">Best team I ever hired 😂</div>
+      </div>
+      <div class="compose">Message My AI Team</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The proof</span>
+      <h2>My team is <span class="band">real.</span></h2>
+      <p>I trade every morning and work night shifts as a nurse. These agents handle the daily work, and I check it and say OK.</p>
+    </div>
+    <div class="team">
+      <div class="agent"><img src="img/terrell.png" alt=""><div><h3>Terrell</h3><div class="role" style="color:#C98A12">Chief of staff</div><p>Plans my day and drafts my posts every morning.</p></div></div>
+      <div class="agent"><img src="img/radar.png" alt=""><div><h3>Radar</h3><div class="role" style="color:#2F86D6">Market scanner</div><p>Scans the market and the news before I trade.</p></div></div>
+      <div class="agent"><img src="img/printer.png" alt=""><div><h3>Printer</h3><div class="role" style="color:#8B55D9">Content</div><p>Turns my results into recaps for IG, X and Threads.</p></div></div>
+      <div class="agent"><img src="img/sonar.png" alt=""><div><h3>Sonar</h3><div class="role" style="color:#16A08F">Tool builder</div><p>Builds the tools and indicators I ask for.</p></div></div>
+      <div class="agent"><img src="img/tino.png" alt=""><div><h3>Tino</h3><div class="role" style="color:var(--lime-deep)">Video editor</div><p>Cuts my clips and made the promo for this class.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Who it's for</span>
+      <h2>You do the work only you can do.</h2>
+    </div>
+    <div class="for">
+      <article>
+        <span class="pill tag"><i></i>For traders</span>
+        <h3>You watch the chart. Your <span class="band">AI team</span> posts.</h3>
+        <p>Trading all morning and still need to post? Build agents that turn your P&amp;L into content and keep your community fed while you trade.</p>
+        <div class="ping"><b style="color:#B07CF5">Printer</b>Today's recap drafted from your P&amp;L for IG, X and Threads 👀</div>
+      </article>
+      <article>
+        <span class="pill tag"><i></i>For nurse creators</span>
+        <h3>You work the shift. Your <span class="band">AI team</span> posts.</h3>
+        <p>Twelve hour shifts and a page to grow? Build agents that handle your posts, DMs and brand emails while you're on the floor.</p>
+        <div class="ping"><b style="color:#F2B33D">Terrell</b>Brand deal email came in. Reply drafted for your OK 📩</div>
+      </article>
+      <article>
+        <span class="pill tag"><i></i>For business owners</span>
+        <h3>Your business. Your <span class="band">AI team.</span></h3>
+        <p>For creators, influencers and business owners. Agents that research, write and organize in your voice while you run the business.</p>
+        <div class="ping"><b style="color:#4FA8F7">Radar</b>3 topics trending in your niche right now 📈</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">In one live class</span>
+      <h2>What you'll <span class="band">build.</span></h2>
+    </div>
+    <ol class="build">
+      <li>What an AI agent actually is</li>
+      <li>Hooking up Drive, Gmail and Discord</li>
+      <li>A rulebook that sounds like you</li>
+      <li>A research agent that finds trends</li>
+      <li>A content agent that drafts posts</li>
+      <li>Running your whole team from your phone</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="host">
+      <img src="img/brandon.png" alt="Brandon “BNice” Robinson">
+      <div>
+        <span class="eyebrow">Your host</span>
+        <h3>Brandon “BNice” Robinson</h3>
+        <p>I run my brand with this exact team. Day trader since 2020, night shift nurse, and founder of the PrintSquad trading community. I built every agent on this page, and in this class I'll show you how to build yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-block: 24px 40px">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="date">Sat, Nov 7<small>NOON CT · LIVE ON ZOOM</small></div>
+      <div class="amount">$50</div>
+      <div class="go">
+        <span class="eyebrow">Secure checkout with Stripe</span>
+        <a class="btn" href="https://buy.stripe.com/cNiaEXfH996n0Qh7OR8og00" target="_blank" rel="noopener">Save your seat <span class="price">$50</span></a>
+        <span class="fine" style="color:#B3B5BA">After you pay, I'll email you the Zoom link at the address you use at checkout.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>@BNICE_FNP · Facts No Printer</span>
+    <span>Payments are processed securely by Stripe.</span>
+  </footer>
+</div>
+</body>
+</html>
