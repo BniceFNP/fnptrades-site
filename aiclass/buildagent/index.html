@@ -164,7 +164,7 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
   <div class="hero">
     <span class="eyebrow">Saturday, Nov 7 · Noon CT · Live on Zoom</span>
     <h1>You're <span class="band">in.</span></h1>
-    <p class="lede">Your seat is saved. <b>The Zoom link goes to the email you used at checkout.</b> Everything below gets your AI team built before we meet, so class time goes to making it work for you.</p>
+    <p class="lede">Your seat is saved. <b>Bookmark this page now</b> so you can come right back to it on class day. <b>Your Zoom link and license code are on their way to the email you used at checkout.</b></p>
     <a class="back" href="../">Back to class details</a>
   </div>
 </div>
@@ -178,8 +178,8 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
     <div class="next">
       <article>
         <span class="eyebrow">Before Nov 7</span>
-        <h3>Check your inbox</h3>
-        <p>Two emails are coming from me: the Zoom link, and your personal install kit with your license code. Check spam if you don't see them within a day.</p>
+        <h3>Bookmark &amp; check inbox</h3>
+        <p>Bookmark this page right now so you never lose it. Your confirmation email has your personal Zoom link, your license code (<code>FNP-FLEET-XXXX-XXXX</code>), and a link back here.</p>
       </article>
       <article>
         <span class="eyebrow">Save the date</span>
@@ -216,12 +216,13 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
     <div class="ticket">
       <span class="eyebrow">Your install kit</span>
       <h2>Enter your <span class="band">license code.</span></h2>
-      <p>It's in your kit email and looks like FNP-FLEET-XXXX-XXXX. The kit is tied to your name and email, works on two computers, and is yours alone. Someone else wants one? Send them to <a href="../" style="color:var(--paper)">fnptrades.com/aiclass</a>.</p>
+      <p>It's in your confirmation email and looks like FNP-FLEET-XXXX-XXXX. Enter it anytime to check your Zoom link before class or grab your personal install prompt once class starts on Saturday, Nov 7 at noon CT. Someone else wants a seat? Send them to <a href="../" style="color:var(--paper)">fnptrades.com/aiclass</a>.</p>
       <form class="codeform" id="codeform" autocomplete="off">
         <input id="code" name="code" placeholder="FNP-FLEET-XXXX-XXXX" aria-label="License code" spellcheck="false" maxlength="24" required>
         <button class="btn" type="submit">Get my kit</button>
       </form>
       <div class="status-line" id="status" aria-live="polite"></div>
+      <div id="zoombox" style="display:none;background:#1D1F24;border:2px solid #2C2D31;border-radius:14px;padding:14px 18px;font-size:15px;color:#F4F4F5;"></div>
       <div class="kit" id="kit">
         <textarea id="kittext" readonly aria-label="Your install kit"></textarea>
         <div class="row">
@@ -241,12 +242,11 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
 </div>
 
 <script>
-// The kit service hands out each member's personalized kit by license code and counts activations.
-// Leave KIT_SERVICE empty until the service is live: the page then points people to their kit email.
-var KIT_SERVICE = "";
+// The kit service hands out each member's status, Zoom link, and (after release) their paste prompt without using a seat.
+var KIT_SERVICE = "https://kit-service-production-ffea.up.railway.app";
 var form = document.getElementById("codeform"), input = document.getElementById("code"),
-    statusEl = document.getElementById("status"), kit = document.getElementById("kit"),
-    text = document.getElementById("kittext"), copy = document.getElementById("copy");
+    statusEl = document.getElementById("status"), zoomBox = document.getElementById("zoombox"),
+    kit = document.getElementById("kit"), text = document.getElementById("kittext"), copy = document.getElementById("copy");
 
 function say(msg, cls) { statusEl.textContent = msg; statusEl.className = "status-line " + (cls || ""); }
 
@@ -254,30 +254,35 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
   var code = input.value.trim().toUpperCase().replace(/\s+/g, "");
   input.value = code;
+  zoomBox.style.display = "none";
   if (!/^FNP-FLEET-[A-Z2-9]{4}-[A-Z2-9]{4}$/.test(code)) {
-    say("That doesn't look like a license code. Copy it exactly from your kit email.", "bad");
+    say("That doesn't look like a license code. Copy it exactly from your confirmation email.", "bad");
     kit.classList.remove("show");
     return;
   }
-  if (!KIT_SERVICE) {
-    say("Your kit is in the email I sent you. Open it, copy the PROMPT block, and paste it into Claude Code.", "good");
-    return;
-  }
   say("Checking your code…");
-  var machine = encodeURIComponent((navigator.platform || "web").slice(0, 40));
-  fetch(KIT_SERVICE.replace(/\/$/, "") + "/kit/" + code + "?m=" + machine)
-    .then(function (r) { return r.text().then(function (t) { return { ok: r.ok, status: r.status, body: t }; }); })
+  fetch(KIT_SERVICE.replace(/\/$/, "") + "/me/" + code + "/json")
+    .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
     .then(function (res) {
-      if (!res.ok) {
-        say(res.status === 403 ? res.body : "That code didn't check out. Copy it exactly from your kit email.", "bad");
+      if (!res.ok || !res.data.ok) {
+        say((res.data && res.data.message) || "That code didn't check out. Copy it exactly from your confirmation email.", "bad");
         kit.classList.remove("show");
         return;
       }
-      text.value = res.body;
-      kit.classList.add("show");
-      say("Here's your kit. Copy all of it and paste it into Claude Code.", "good");
+      var d = res.data;
+      say(d.message, "good");
+      if (d.join_url) {
+        zoomBox.innerHTML = '<b>Your Class Zoom Link:</b> <a href="' + d.join_url.replace(/"/g, "&quot;") + '" target="_blank" rel="noopener" style="color:#7FF27D;word-break:break-all">' + d.join_url.replace(/</g, "&lt;") + '</a>' + (d.passcode ? ' &nbsp;·&nbsp; <b>Passcode:</b> ' + d.passcode.replace(/</g, "&lt;") : '');
+        zoomBox.style.display = "block";
+      }
+      if (d.released && d.prompt) {
+        text.value = d.prompt;
+        kit.classList.add("show");
+      } else {
+        kit.classList.remove("show");
+      }
     })
-    .catch(function () { say("Couldn't reach the kit service. Try again in a minute, or use the kit in your email.", "bad"); });
+    .catch(function () { say("Couldn't reach the kit service. Try again in a minute, or open the kit link in your email.", "bad"); });
 });
 
 copy.addEventListener("click", function () {
