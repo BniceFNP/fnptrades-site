@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T05:59:11Z",
+ "updated": "2026-11-03T06:44:30Z",
  "source": "ForexFactory calendar, USD, high impact",
  "events": [
   {
@@ -17,7 +17,7 @@
   {
    "title": "Non-Farm Employment Change",
    "date": "2026-11-06T08:30:00-05:00",
-   "forecast": "63K",
+   "forecast": "65K",
    "previous": "29K"
   },
   {
