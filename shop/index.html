@@ -321,7 +321,8 @@ document.querySelector("[data-checkout]").addEventListener("click", async () => 
     const r = await fetch(SHOP_API + "/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ items: bag }) });
     const data = await r.json();
     if (!r.ok || !data.url) throw new Error(data.detail || "checkout did not open");
-    location.href = data.url;
+    // inside the Whop embed the page is an iframe and Stripe refuses to load framed, so send the top window
+    try { (window.top || window).location.href = data.url; } catch (e) { window.open(data.url, "_blank"); }
   } catch (e) {
     err.textContent = "Checkout did not open. Try again in a moment, or reply to any FNP Trades email.";
     btn.disabled = false; btn.textContent = "Checkout";
