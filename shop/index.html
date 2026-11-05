@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="https://fnptrades.com/shop/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fnptrades.com/shop/">
+<meta property="og:title" content="PrintSquad Apparel">
+<meta property="og:description" content="Simple pieces for people who trade with structure. Tees, hoodies, a crew, a long sleeve, a beanie and a dad hat. Made to order, ships from the US.">
+<meta property="og:image" content="https://fnptrades.com/shop/img/bull-back-hoodie_black_back.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="PrintSquad apparel by FNP Trades. Heavyweight blanks, clean marks, nothing loud. Made to order, free US shipping.">
+<title>PrintSquad Apparel | FNP Trades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* The site's look (src/index.html): dark the way a trading terminal is dark, Sora headlines, white buttons,
+   cyan as the one accent. Every colour is painted explicitly. */
+:root{
+  --ground:#07090B; --ground-2:#0B0E12; --panel:#0E1216;
+  --t1:rgba(255,255,255,.94); --t2:rgba(255,255,255,.70); --t3:rgba(255,255,255,.50); --t4:rgba(255,255,255,.34);
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --cyan:#2FE3F6; --mint:#B2EBF2; --up:#2FE3A0; --down:#F5533C;
+  --display:"Sora",ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  --body:"Hanken Grotesk",ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--t2);font:300 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(18px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);color:var(--t1);margin:0;text-wrap:balance}
+h1{font-weight:300;font-size:clamp(36px,5.6vw,64px);line-height:1.04;letter-spacing:-.035em}
+h2{font-weight:300;font-size:clamp(26px,3.4vw,40px);line-height:1.1;letter-spacing:-.03em}
+h3{font-weight:400;font-size:19px;letter-spacing:-.01em}
+.dim{color:var(--t4)}
+p{margin:0}
+.lede{font-size:clamp(17px,1.5vw,20px);color:var(--t3);max-width:60ch}
+.eyebrow{font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--t3);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 14.5px/1 var(--body);padding:14px 24px;border-radius:12px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.btn-solid{background:#fff;color:#07090B}
+.btn-solid:hover{transform:translateY(-1px);background:var(--mint)}
+.btn-solid[disabled]{opacity:.5;cursor:default;transform:none}
+.btn-ghost{color:var(--t1);border-color:var(--line-2);background:transparent}
+.btn-ghost:hover{border-color:var(--t3)}
+.btn-sm{padding:10px 18px;font-size:13.5px}
+.hdr{position:sticky;top:0;z-index:20;background:rgba(7,9,11,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:14px;padding-block:14px}
+.brand{font:400 15px/1 var(--display);color:var(--t1);letter-spacing:-.01em;display:flex;gap:10px;align-items:center}
+.brand s{text-decoration:none;color:var(--t4)}
+.nav{display:flex;gap:16px;margin-left:auto;margin-right:4px;font-size:13.5px;font-weight:400;color:var(--t3)}
+.nav a:hover{color:var(--t1)}
+section{padding-block:clamp(48px,7vw,88px)}
+footer{border-top:1px solid var(--line);padding-block:40px 48px;font-size:14px;color:var(--t3)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+.hero{padding-block:clamp(48px,7vw,88px) clamp(28px,4vw,48px);background:radial-gradient(900px 420px at 78% 8%,rgba(47,227,246,.07),transparent 70%)}
+.hero .wrap{display:grid;gap:22px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;font:400 12px/1 var(--mono);letter-spacing:.08em;color:var(--t4);text-transform:uppercase}
+.facts b{color:var(--t2);font-weight:500}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.card{border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden;display:grid;grid-template-rows:auto 1fr}
+.shot{position:relative;aspect-ratio:800/920;background:radial-gradient(ellipse at 50% 40%,#1b1e24 0%,#0E1216 70%);border-bottom:1px solid var(--line)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .25s ease}
+.shot img.back{opacity:0}
+.card.flip .shot img.front{opacity:0} .card.flip .shot img.back{opacity:1}
+.flipbtn{position:absolute;right:12px;bottom:12px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--t2);background:rgba(7,9,11,.7);border:1px solid var(--line-2);border-radius:999px;padding:8px 12px;cursor:pointer}
+.body{padding:18px 20px 20px;display:grid;gap:14px;align-content:start}
+.row{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.price{font:400 17px/1 var(--mono);color:var(--t1)}
+.blurb{font-size:15px;color:var(--t3);line-height:1.5}
+.detail{font-size:13px;color:var(--t4);line-height:1.5}
+.label{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--t4);margin-bottom:8px;display:flex;justify-content:space-between}
+.label span{color:var(--t2);letter-spacing:.04em;text-transform:none}
+.swatches{display:flex;gap:8px}
+.sw{width:26px;height:26px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.sw.on{border-color:var(--cyan)}
+.sizes{display:flex;flex-wrap:wrap;gap:6px}
+.sz{font:500 12.5px/1 var(--body);color:var(--t2);background:transparent;border:1px solid var(--line-2);border-radius:8px;padding:8px 11px;cursor:pointer;min-width:40px}
+.sz.on{background:#fff;color:#07090B;border-color:#fff}
+.add{margin-top:4px;width:100%}
+.bagbtn{position:relative}
+.bagbtn b{font-weight:600;color:var(--cyan)}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:var(--ground-2);border-left:1px solid var(--line-2);z-index:40;transform:translateX(100%);transition:transform .25s ease;display:grid;grid-template-rows:auto 1fr auto}
+.drawer.open{transform:none}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.scrim.open{opacity:1;pointer-events:auto}
+.dhead{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--line)}
+.dlist{overflow:auto;padding:12px 22px;display:grid;gap:12px;align-content:start}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--panel)}
+.line img{width:64px;height:74px;object-fit:contain;background:#0b0e12;border-radius:8px}
+.line b{display:block;font-weight:500;color:var(--t1);font-size:14.5px}
+.line small{color:var(--t4);font-size:12.5px;display:block}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:26px;height:26px;border-radius:7px;border:1px solid var(--line-2);background:transparent;color:var(--t1);cursor:pointer;font-size:14px}
+.qty span{min-width:18px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--t1)}
+.dfoot{padding:16px 22px 22px;border-top:1px solid var(--line);display:grid;gap:12px}
+.total{display:flex;justify-content:space-between;font-size:15px;color:var(--t2)}
+.total b{font-family:var(--mono);font-weight:500;color:var(--t1)}
+.err{font-size:13.5px;color:var(--down);min-height:1.2em}
+.empty{color:var(--t4);font-size:14.5px;padding:24px 0;text-align:center}
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ground-2)}
+.strip .wrap{display:grid;gap:18px 40px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding-block:28px}
+.strip b{display:block;font:400 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--t4);margin-bottom:8px}
+.strip p{font-size:14.5px;color:var(--t3)}
+.thanks{min-height:60vh;display:grid;align-content:center;gap:18px}
+@media (max-width:640px){.nav{display:none}}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="wrap">
+  <a class="brand" href="https://fnptrades.com/">FNP Trades <s>/</s> PrintSquad</a>
+  <nav class="nav" aria-label="Sections"><a href="https://fnptrades.com/">Home</a><a href="https://fnptrades.com/#join">Join</a><a href="https://whop.com/masterthemarket?a=bnicefnp">Community</a></nav>
+  <button class="btn btn-ghost btn-sm bagbtn" type="button" data-openbag>Bag <b data-count>0</b></button>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">PrintSquad Apparel · Drop 01</span>
+  <h1>Simple pieces for people<br><span class="dim">who trade with structure.</span></h1>
+  <p class="lede">Heavyweight blanks, clean marks, nothing loud. Every piece is made to order and ships from the US. Allow about 1 to 2 weeks.</p>
+  <div class="facts"><span>Free US shipping</span><span>Black, white and two grays per piece</span><span>Card, Apple Pay, Google Pay</span></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><div class="grid">
+<article class="card" data-piece="lockup-tee">
+  <div class="shot"><img class="front" src="img/lockup-tee_black.webp" alt="The Lockup Tee" loading="lazy"></div>
+  <div class="body">
+    <div class="row"><h3>The Lockup Tee</h3><span class="price">$45</span></div>
+    <p class="blurb">PrintSquad across the chest. Respect your capital. Trust your system. Right under it, in powder blue.</p>
+    <p class="detail">Heavyweight cotton tee, regular fit, true to size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#f1f1ee" data-color="white" title="White" aria-label="White"></button><button class="sw" style="background:#4a4c50" data-color="charcoalheather" title="Charcoal Heather" aria-label="Charcoal Heather"></button><button class="sw" style="background:#6e7074" data-color="carbongrey" title="Carbon Grey" aria-label="Carbon Grey"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button><button class="sz" data-size="3XL">3XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="lockup-longsleeve">
+  <div class="shot"><img class="front" src="img/lockup-longsleeve_black.webp" alt="The Lockup Long Sleeve" loading="lazy"></div>
+  <div class="body">
+    <div class="row"><h3>The Lockup Long Sleeve</h3><span class="price">$45</span></div>
+    <p class="blurb">Same lockup, longer sleeves. For the premarket hours when the room is cold and the chart is quiet.</p>
+    <p class="detail">Combed ring spun cotton, regular fit.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#f1f1ee" data-color="white" title="White" aria-label="White"></button><button class="sw" style="background:#5a5c60" data-color="darkgreyheather" title="Dark Grey Heather" aria-label="Dark Grey Heather"></button><button class="sw" style="background:#a9abae" data-color="athleticheather" title="Athletic Heather" aria-label="Athletic Heather"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="lockup-crew">
+  <div class="shot"><img class="front" src="img/lockup-crew_black.webp" alt="The Lockup Crew" loading="lazy"></div>
+  <div class="body">
+    <div class="row"><h3>The Lockup Crew</h3><span class="price">$55</span></div>
+    <p class="blurb">PrintSquad across the chest on a heavy fleece crewneck. Wear it to the desk, wear it out.</p>
+    <p class="detail">50/50 cotton and polyester fleece, relaxed fit, ribbed cuffs and hem.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#f1f1ee" data-color="white" title="White" aria-label="White"></button><button class="sw" style="background:#9d9fa2" data-color="sportgrey" title="Sport Grey" aria-label="Sport Grey"></button><button class="sw" style="background:#d9dad6" data-color="ash" title="Ash" aria-label="Ash"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button><button class="sz" data-size="3XL">3XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="lockup-hoodie">
+  <div class="shot"><img class="front" src="img/lockup-hoodie_black.webp" alt="The Lockup Hoodie" loading="lazy"></div>
+  <div class="body">
+    <div class="row"><h3>The Lockup Hoodie</h3><span class="price">$65</span></div>
+    <p class="blurb">The one for the morning session. PrintSquad across the chest, the line under it.</p>
+    <p class="detail">Heavyweight 10 oz fleece, fleece lined hood, kangaroo pocket. Relaxed fit, take your usual size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#8f9296" data-color="greyheather" title="Grey Heather" aria-label="Grey Heather"></button><button class="sw" style="background:#3f4044" data-color="charcoalsolid" title="Charcoal" aria-label="Charcoal"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button><button class="sz" data-size="3XL">3XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="bull-back-tee">
+  <div class="shot"><img class="front" src="img/bull-back-tee_black.webp" alt="The Bull Back Tee" loading="lazy"><img class="back" src="img/bull-back-tee_black_back.webp" alt="" loading="lazy"><button class="flipbtn" type="button" data-flip>Back</button></div>
+  <div class="body">
+    <div class="row"><h3>The Bull Back Tee</h3><span class="price">$45</span></div>
+    <p class="blurb">The PrintSquad bull across the back, full colour. The lockup small on the left chest. Quiet from the front. Signed from behind.</p>
+    <p class="detail">Heavyweight cotton tee, regular fit, true to size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#f1f1ee" data-color="white" title="White" aria-label="White"></button><button class="sw" style="background:#4a4c50" data-color="charcoalheather" title="Charcoal Heather" aria-label="Charcoal Heather"></button><button class="sw" style="background:#6e7074" data-color="carbongrey" title="Carbon Grey" aria-label="Carbon Grey"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button><button class="sz" data-size="3XL">3XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="bull-back-hoodie">
+  <div class="shot"><img class="front" src="img/bull-back-hoodie_black.webp" alt="The Bull Back Hoodie" loading="lazy"><img class="back" src="img/bull-back-hoodie_black_back.webp" alt="" loading="lazy"><button class="flipbtn" type="button" data-flip>Back</button></div>
+  <div class="body">
+    <div class="row"><h3>The Bull Back Hoodie</h3><span class="price">$65</span></div>
+    <p class="blurb">The bull across the back, the lockup on the left chest.</p>
+    <p class="detail">Heavyweight 10 oz fleece, fleece lined hood, kangaroo pocket. Relaxed fit, take your usual size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#8f9296" data-color="greyheather" title="Grey Heather" aria-label="Grey Heather"></button><button class="sw" style="background:#3f4044" data-color="charcoalsolid" title="Charcoal" aria-label="Charcoal"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button><button class="sz" data-size="3XL">3XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="bull-chest-tee">
+  <div class="shot"><img class="front" src="img/bull-chest-tee_black.webp" alt="The Bull Chest Tee" loading="lazy"><img class="back" src="img/bull-chest-tee_black_back.webp" alt="" loading="lazy"><button class="flipbtn" type="button" data-flip>Back</button></div>
+  <div class="body">
+    <div class="row"><h3>The Bull Chest Tee</h3><span class="price">$45</span></div>
+    <p class="blurb">Just the bull, small on the left chest. PrintSquad in block letters across the back.</p>
+    <p class="detail">Heavyweight cotton tee, regular fit, true to size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#f1f1ee" data-color="white" title="White" aria-label="White"></button><button class="sw" style="background:#4a4c50" data-color="charcoalheather" title="Charcoal Heather" aria-label="Charcoal Heather"></button><button class="sw" style="background:#6e7074" data-color="carbongrey" title="Carbon Grey" aria-label="Carbon Grey"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button><button class="sz" data-size="3XL">3XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="bull-chest-hoodie">
+  <div class="shot"><img class="front" src="img/bull-chest-hoodie_black.webp" alt="The Bull Chest Hoodie" loading="lazy"><img class="back" src="img/bull-chest-hoodie_black_back.webp" alt="" loading="lazy"><button class="flipbtn" type="button" data-flip>Back</button></div>
+  <div class="body">
+    <div class="row"><h3>The Bull Chest Hoodie</h3><span class="price">$65</span></div>
+    <p class="blurb">The bull on the left chest, PrintSquad in block letters across the back.</p>
+    <p class="detail">Heavyweight 10 oz fleece, fleece lined hood, kangaroo pocket. Relaxed fit, take your usual size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#8f9296" data-color="greyheather" title="Grey Heather" aria-label="Grey Heather"></button><button class="sw" style="background:#3f4044" data-color="charcoalsolid" title="Charcoal" aria-label="Charcoal"></button></div></div>
+    <div><div class="label">Size <span data-sizename></span></div><div class="sizes"><button class="sz" data-size="S">S</button><button class="sz" data-size="M">M</button><button class="sz" data-size="L">L</button><button class="sz" data-size="XL">XL</button><button class="sz" data-size="2XL">2XL</button><button class="sz" data-size="3XL">3XL</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="squad-beanie">
+  <div class="shot"><img class="front" src="img/squad-beanie_black.webp" alt="The Squad Beanie" loading="lazy"></div>
+  <div class="body">
+    <div class="row"><h3>The Squad Beanie</h3><span class="price">$30</span></div>
+    <p class="blurb">The bull stitched on the cuff. Cold mornings, early sessions.</p>
+    <p class="detail">Cuffed knit beanie, one size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#f1f1ee" data-color="white" title="White" aria-label="White"></button><button class="sw" style="background:#8f9296" data-color="heathergrey" title="Heather Grey" aria-label="Heather Grey"></button><button class="sw" style="background:#55575a" data-color="darkgrey" title="Dark Grey" aria-label="Dark Grey"></button></div></div>
+    <div><div class="label">Size <span data-sizename>One size</span></div><div class="sizes"><button class="sz on" data-size="One size">One size</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+<article class="card" data-piece="squad-dad-hat">
+  <div class="shot"><img class="front" src="img/squad-dad-hat_black.webp" alt="The Squad Dad Hat" loading="lazy"></div>
+  <div class="body">
+    <div class="row"><h3>The Squad Dad Hat</h3><span class="price">$32</span></div>
+    <p class="blurb">A low profile dad hat with the bull stitched on the front.</p>
+    <p class="detail">Cotton twill, unstructured, adjustable strap. One size.</p>
+    <div><div class="label">Color <span data-colorname>Black</span></div><div class="swatches"><button class="sw on" style="background:#141518" data-color="black" title="Black" aria-label="Black"></button><button class="sw" style="background:#f1f1ee" data-color="white" title="White" aria-label="White"></button><button class="sw" style="background:#55575a" data-color="darkgrey" title="Dark Grey" aria-label="Dark Grey"></button><button class="sw" style="background:#c8c0ae" data-color="stone" title="Stone" aria-label="Stone"></button></div></div>
+    <div><div class="label">Size <span data-sizename>One size</span></div><div class="sizes"><button class="sz on" data-size="One size">One size</button></div></div>
+    <button class="btn btn-solid add" type="button" data-add>Add to bag</button>
+  </div>
+</article>
+</div></div></section>
+<div class="strip"><div class="wrap">
+  <div><b>Made to order</b><p>Each piece is printed when you order it, then shipped from the US. Allow about 1 to 2 weeks to land.</p></div>
+  <div><b>Fit</b><p>Tees and hoodies fit true to size. Hoodies run relaxed, so take your usual size.</p></div>
+  <div><b>Care</b><p>Machine wash cold, inside out, hang dry.</p></div>
+  <div><b>Questions</b><p>Reply to your receipt email and it reaches Brandon.</p></div>
+</div></div>
+<div class="scrim" data-scrim></div>
+<aside class="drawer" data-drawer aria-label="Your bag">
+  <div class="dhead"><h3>Your bag</h3><button class="btn btn-ghost btn-sm" type="button" data-closebag>Close</button></div>
+  <div class="dlist" data-lines></div>
+  <div class="dfoot">
+    <div class="total"><span>Total, shipping included</span><b data-total>$0</b></div>
+    <div class="err" data-err></div>
+    <button class="btn btn-solid" type="button" data-checkout disabled>Checkout</button>
+    <p class="detail">Address and payment on the next page, by Stripe. Tax, if any, is added there.</p>
+  </div>
+</aside>
+<script>
+const SHOP_API = "https://printsquad-shop-production.up.railway.app";
+const CAT = {"currency":"usd","colors":{"black":"Black","white":"White","charcoalheather":"Charcoal Heather","carbongrey":"Carbon Grey","darkgreyheather":"Dark Grey Heather","athleticheather":"Athletic Heather","sportgrey":"Sport Grey","ash":"Ash","greyheather":"Grey Heather","charcoalsolid":"Charcoal","heathergrey":"Heather Grey","darkgrey":"Dark Grey","stone":"Stone"},"swatches":{"black":"#141518","white":"#f1f1ee","charcoalheather":"#4a4c50","carbongrey":"#6e7074","darkgreyheather":"#5a5c60","athleticheather":"#a9abae","sportgrey":"#9d9fa2","ash":"#d9dad6","greyheather":"#8f9296","charcoalsolid":"#3f4044","heathergrey":"#8f9296","darkgrey":"#55575a","stone":"#c8c0ae"},"pieces":[{"id":"lockup-tee","title":"The Lockup Tee","price":4500,"kind":"tee","blurb":"PrintSquad across the chest. Respect your capital. Trust your system. Right under it, in powder blue.","detail":"Heavyweight cotton tee, regular fit, true to size.","sizes":["S","M","L","XL","2XL","3XL"],"colors":["black","white","charcoalheather","carbongrey"],"back":false},{"id":"lockup-longsleeve","title":"The Lockup Long Sleeve","price":4500,"kind":"longsleeve","blurb":"Same lockup, longer sleeves. For the premarket hours when the room is cold and the chart is quiet.","detail":"Combed ring spun cotton, regular fit.","sizes":["S","M","L","XL","2XL"],"colors":["black","white","darkgreyheather","athleticheather"],"back":false},{"id":"lockup-crew","title":"The Lockup Crew","price":5500,"kind":"crew","blurb":"PrintSquad across the chest on a heavy fleece crewneck. Wear it to the desk, wear it out.","detail":"50/50 cotton and polyester fleece, relaxed fit, ribbed cuffs and hem.","sizes":["S","M","L","XL","2XL","3XL"],"colors":["black","white","sportgrey","ash"],"back":false},{"id":"lockup-hoodie","title":"The Lockup Hoodie","price":6500,"kind":"hoodie","blurb":"The one for the morning session. PrintSquad across the chest, the line under it.","detail":"Heavyweight 10 oz fleece, fleece lined hood, kangaroo pocket. Relaxed fit, take your usual size.","sizes":["S","M","L","XL","2XL","3XL"],"colors":["black","greyheather","charcoalsolid"],"back":false},{"id":"bull-back-tee","title":"The Bull Back Tee","price":4500,"kind":"tee","blurb":"The PrintSquad bull across the back, full colour. The lockup small on the left chest. Quiet from the front. Signed from behind.","detail":"Heavyweight cotton tee, regular fit, true to size.","sizes":["S","M","L","XL","2XL","3XL"],"colors":["black","white","charcoalheather","carbongrey"],"back":true},{"id":"bull-back-hoodie","title":"The Bull Back Hoodie","price":6500,"kind":"hoodie","blurb":"The bull across the back, the lockup on the left chest.","detail":"Heavyweight 10 oz fleece, fleece lined hood, kangaroo pocket. Relaxed fit, take your usual size.","sizes":["S","M","L","XL","2XL","3XL"],"colors":["black","greyheather","charcoalsolid"],"back":true},{"id":"bull-chest-tee","title":"The Bull Chest Tee","price":4500,"kind":"tee","blurb":"Just the bull, small on the left chest. PrintSquad in block letters across the back.","detail":"Heavyweight cotton tee, regular fit, true to size.","sizes":["S","M","L","XL","2XL","3XL"],"colors":["black","white","charcoalheather","carbongrey"],"back":true},{"id":"bull-chest-hoodie","title":"The Bull Chest Hoodie","price":6500,"kind":"hoodie","blurb":"The bull on the left chest, PrintSquad in block letters across the back.","detail":"Heavyweight 10 oz fleece, fleece lined hood, kangaroo pocket. Relaxed fit, take your usual size.","sizes":["S","M","L","XL","2XL","3XL"],"colors":["black","greyheather","charcoalsolid"],"back":true},{"id":"squad-beanie","title":"The Squad Beanie","price":3000,"kind":"beanie","blurb":"The bull stitched on the cuff. Cold mornings, early sessions.","detail":"Cuffed knit beanie, one size.","sizes":["One size"],"colors":["black","white","heathergrey","darkgrey"],"back":false},{"id":"squad-dad-hat","title":"The Squad Dad Hat","price":3200,"kind":"hat","blurb":"A low profile dad hat with the bull stitched on the front.","detail":"Cotton twill, unstructured, adjustable strap. One size.","sizes":["One size"],"colors":["black","white","darkgrey","stone"],"back":false}]};
+const PIECES = Object.fromEntries(CAT.pieces.map(p => [p.id, p]));
+const money = c => "$" + (c / 100).toFixed(c % 100 ? 2 : 0);
+let bag = [];
+try { bag = JSON.parse(localStorage.getItem("ps-bag") || "[]"); } catch (e) { bag = []; }
+const save = () => { try { localStorage.setItem("ps-bag", JSON.stringify(bag)); } catch (e) {} };
+
+document.querySelectorAll(".card").forEach(card => {
+  const id = card.dataset.piece, p = PIECES[id];
+  const state = { color: p.colors[0], size: p.sizes.length === 1 ? p.sizes[0] : null };
+  card.querySelectorAll(".sw").forEach(b => b.addEventListener("click", () => {
+    state.color = b.dataset.color;
+    card.querySelectorAll(".sw").forEach(x => x.classList.toggle("on", x === b));
+    card.querySelector("[data-colorname]").textContent = CAT.colors[state.color];
+    card.querySelector("img.front").src = `img/${id}_${state.color}.webp`;
+    const back = card.querySelector("img.back"); if (back) back.src = `img/${id}_${state.color}_back.webp`;
+  }));
+  card.querySelectorAll(".sz").forEach(b => b.addEventListener("click", () => {
+    state.size = b.dataset.size;
+    card.querySelectorAll(".sz").forEach(x => x.classList.toggle("on", x === b));
+    card.querySelector("[data-sizename]").textContent = state.size;
+  }));
+  const flip = card.querySelector("[data-flip]");
+  if (flip) flip.addEventListener("click", () => { card.classList.toggle("flip"); flip.textContent = card.classList.contains("flip") ? "Front" : "Back"; });
+  card.querySelector("[data-add]").addEventListener("click", () => {
+    if (!state.size) { card.querySelector("[data-sizename]").textContent = "pick one"; return; }
+    const line = bag.find(l => l.piece === id && l.color === state.color && l.size === state.size);
+    if (line) line.qty = Math.min(10, line.qty + 1); else bag.push({ piece: id, color: state.color, size: state.size, qty: 1 });
+    save(); render(); openBag(true);
+  });
+});
+
+const drawer = document.querySelector("[data-drawer]"), scrim = document.querySelector("[data-scrim]");
+function openBag(on) { drawer.classList.toggle("open", on); scrim.classList.toggle("open", on); }
+document.querySelector("[data-openbag]").addEventListener("click", () => openBag(true));
+document.querySelector("[data-closebag]").addEventListener("click", () => openBag(false));
+scrim.addEventListener("click", () => openBag(false));
+
+function render() {
+  const list = document.querySelector("[data-lines]");
+  const count = bag.reduce((n, l) => n + l.qty, 0);
+  document.querySelector("[data-count]").textContent = count;
+  if (!bag.length) { list.innerHTML = '<p class="empty">Nothing in your bag yet.</p>'; }
+  else list.innerHTML = bag.map((l, i) => {
+    const p = PIECES[l.piece];
+    return `<div class="line"><img src="img/${l.piece}_${l.color}.webp" alt=""><div><b>${p.title}</b><small>${CAT.colors[l.color]}${l.size === "One size" ? "" : " · " + l.size} · ${money(p.price)}</small></div>
+      <div class="qty"><button type="button" data-dec="${i}" aria-label="Less">−</button><span>${l.qty}</span><button type="button" data-inc="${i}" aria-label="More">+</button></div></div>`;
+  }).join("");
+  const total = bag.reduce((n, l) => n + l.qty * PIECES[l.piece].price, 0);
+  document.querySelector("[data-total]").textContent = money(total);
+  document.querySelector("[data-checkout]").disabled = !bag.length;
+  list.querySelectorAll("[data-dec]").forEach(b => b.addEventListener("click", () => { const i = +b.dataset.dec; bag[i].qty -= 1; if (bag[i].qty < 1) bag.splice(i, 1); save(); render(); }));
+  list.querySelectorAll("[data-inc]").forEach(b => b.addEventListener("click", () => { const i = +b.dataset.inc; bag[i].qty = Math.min(10, bag[i].qty + 1); save(); render(); }));
+}
+render();
+
+document.querySelector("[data-checkout]").addEventListener("click", async () => {
+  const btn = document.querySelector("[data-checkout]"), err = document.querySelector("[data-err]");
+  btn.disabled = true; btn.textContent = "Opening checkout…"; err.textContent = "";
+  try {
+    const r = await fetch(SHOP_API + "/checkout", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ items: bag }) });
+    const data = await r.json();
+    if (!r.ok || !data.url) throw new Error(data.detail || "checkout did not open");
+    location.href = data.url;
+  } catch (e) {
+    err.textContent = "Checkout did not open. Try again in a moment, or reply to any FNP Trades email.";
+    btn.disabled = false; btn.textContent = "Checkout";
+  }
+});
+</script>
+<footer><div class="wrap">
+  <span>PrintSquad Apparel by FNP Trades. Made to order, printed and shipped from the US.</span>
+  <span><a href="https://fnptrades.com/">fnptrades.com</a> · <a href="https://www.instagram.com/bnice_fnp/">Instagram</a> · <a href="https://x.com/fnptrades">X</a></span>
+</div></footer>
+</body>
+</html>
