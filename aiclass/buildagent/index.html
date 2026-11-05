@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://fnptrades.com/aiclass/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <title>You're in | Build Your Own AI Team</title>
-<meta name="description" content="Registration confirmed. Your next steps: check your inbox, block the time, install Claude Code, and paste your personal install kit to build your AI team.">
+<meta name="description" content="Registration confirmed. Your next steps: check your inbox, block the time, install Claude Code or ChatGPT's Codex, and paste your personal install kit to build your AI team.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
@@ -202,9 +202,15 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
       <h2>Build your <span class="band">AI team.</span></h2>
       <p>One paste does it. Your kit interviews you, learns how you talk, and builds your team on your computer or on a flash drive.</p>
     </div>
+    <div class="toolpick" id="toolpick" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 18px">
+      <span class="eyebrow" style="margin:0">Which AI are you using?</span>
+      <button class="btn small" type="button" data-tool="claude">Claude</button>
+      <button class="btn small" type="button" data-tool="codex">ChatGPT</button>
+      <span class="fine" style="color:#B3B5BA">Either one works. Pick the one you already pay for.</span>
+    </div>
     <ol class="build">
-      <li><div><b>Install Claude Code</b><span>Get it at <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a> and sign in with your Claude account. The Pro plan is enough.</span></div></li>
-      <li><div><b>Open a terminal</b><span>Windows: open PowerShell. Mac: open Terminal. Type <code>claude</code> and press Enter.</span></div></li>
+      <li><div><b id="step-install-title">Install Claude Code</b><span id="step-install">Get it at <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a> and sign in with your Claude account. The Pro plan is enough.</span></div></li>
+      <li><div><b>Open a terminal</b><span id="step-open">Windows: open PowerShell. Mac: open Terminal. Type <code>claude</code> and press Enter.</span></div></li>
       <li><div><b>Paste your kit</b><span>Get your kit below with your license code, copy it, and paste the whole thing as your first message.</span></div></li>
       <li><div><b>Answer its questions</b><span>It asks one at a time: your name and email, where the team should live, what you do, how you talk, your rules. Then it builds everything and tells you how to start your Chief of Staff.</span></div></li>
     </ol>
@@ -227,7 +233,7 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
         <textarea id="kittext" readonly aria-label="Your install kit"></textarea>
         <div class="row">
           <button class="btn small" type="button" id="copy">Copy the whole kit</button>
-          <span class="fine" style="color:#B3B5BA">Then paste it into Claude Code as your first message.</span>
+          <span class="fine" style="color:#B3B3BA" id="paste-note">Then paste it into Claude Code as your first message.</span>
         </div>
       </div>
     </div>
@@ -250,6 +256,35 @@ var form = document.getElementById("codeform"), input = document.getElementById(
 
 function say(msg, cls) { statusEl.textContent = msg; statusEl.className = "status-line " + (cls || ""); }
 
+// Claude Code or Codex (ChatGPT): same kit, the service swaps the command and the rulebook file name.
+var TOOLS = {
+  claude: { name: "Claude Code", cmd: "claude",
+            install: 'Get it at <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a> and sign in with your Claude account. The Pro plan is enough.' },
+  codex:  { name: "Codex (ChatGPT)", cmd: "codex",
+            install: 'Install Node.js first from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> (the LTS download), then in Terminal or PowerShell run <code>npm install -g @openai/codex</code>. Type <code>codex</code> and pick Sign in with ChatGPT (Plus or Pro). Docs: <a href="https://developers.openai.com/codex/cli" target="_blank" rel="noopener">developers.openai.com/codex/cli</a>.' }
+};
+var TOOL = "claude";
+try { TOOL = localStorage.getItem("kit_tool") || "claude"; } catch (e) {}
+if (!TOOLS[TOOL]) { TOOL = "claude"; }
+function renderTool() {
+  var t = TOOLS[TOOL];
+  document.getElementById("step-install-title").textContent = "Install " + t.name;
+  document.getElementById("step-install").innerHTML = t.install;
+  document.getElementById("step-open").innerHTML = "Windows: open PowerShell. Mac: open Terminal. Type <code>" + t.cmd + "</code> and press Enter.";
+  document.getElementById("paste-note").textContent = "Then paste it into " + t.name + " as your first message.";
+  var btns = document.querySelectorAll("#toolpick button");
+  for (var i = 0; i < btns.length; i++) { btns[i].style.opacity = btns[i].getAttribute("data-tool") === TOOL ? "1" : "0.45"; }
+}
+document.getElementById("toolpick").addEventListener("click", function (e) {
+  var b = e.target.closest("button[data-tool]");
+  if (!b) { return; }
+  TOOL = b.getAttribute("data-tool");
+  try { localStorage.setItem("kit_tool", TOOL); } catch (err) {}
+  renderTool();
+  if (kit.classList.contains("show") && input.value) { form.dispatchEvent(new Event("submit", { cancelable: true })); }
+});
+renderTool();
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   var code = input.value.trim().toUpperCase().replace(/\s+/g, "");
@@ -261,7 +296,7 @@ form.addEventListener("submit", function (e) {
     return;
   }
   say("Checking your code…");
-  fetch(KIT_SERVICE.replace(/\/$/, "") + "/me/" + code + "/json")
+  fetch(KIT_SERVICE.replace(/\/$/, "") + "/me/" + code + "/json?tool=" + encodeURIComponent(TOOL))
     .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
     .then(function (res) {
       if (!res.ok || !res.data.ok) {
