@@ -1,30 +1,30 @@
 {
- "updated": "2026-11-03T06:44:30Z",
+ "updated": "2026-11-08T10:16:59Z",
  "source": "ForexFactory calendar, USD, high impact",
  "events": [
   {
-   "title": "Congressional Elections",
-   "date": "2026-11-03T10:16:00-05:00",
-   "forecast": "",
-   "previous": ""
+   "title": "Core CPI m/m",
+   "date": "2026-11-10T08:30:00-05:00",
+   "forecast": "0.2%",
+   "previous": "0.3%"
   },
   {
-   "title": "Average Hourly Earnings m/m",
-   "date": "2026-11-06T08:30:00-05:00",
+   "title": "CPI m/m",
+   "date": "2026-11-10T08:30:00-05:00",
    "forecast": "0.3%",
-   "previous": "0.1%"
+   "previous": "0.6%"
   },
   {
-   "title": "Non-Farm Employment Change",
-   "date": "2026-11-06T08:30:00-05:00",
-   "forecast": "65K",
-   "previous": "29K"
+   "title": "Core PPI m/m",
+   "date": "2026-11-13T08:30:00-05:00",
+   "forecast": "0.3%",
+   "previous": "0.7%"
   },
   {
-   "title": "Unemployment Rate",
-   "date": "2026-11-06T08:30:00-05:00",
-   "forecast": "4.2%",
-   "previous": "4.2%"
+   "title": "PPI m/m",
+   "date": "2026-11-13T08:30:00-05:00",
+   "forecast": "0.4%",
+   "previous": "1.3%"
   }
  ]
 }
