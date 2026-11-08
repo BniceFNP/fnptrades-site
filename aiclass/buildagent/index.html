@@ -8,11 +8,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fnptrades.com/aiclass/buildagent/">
 <meta property="og:title" content="You're in | Build your own AI team">
-<meta property="og:description" content="Your seat is saved. Here's how to set up your AI team before class on Saturday, Nov 7 at noon CT.">
+<meta property="og:description" content="Your kit is ready. Watch the install video, open your kit page, paste once. Then the class video.">
 <meta property="og:image" content="https://fnptrades.com/aiclass/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <title>You're in | Build Your Own AI Team</title>
-<meta name="description" content="Registration confirmed. Your next steps: check your inbox, block the time, install Claude Code or ChatGPT's Codex, and paste your personal install kit to build your AI team.">
+<meta name="description" content="Registration confirmed. Your next steps: check your inbox, block the time, install the Claude app or ChatGPT's Codex app, and paste your personal install kit to build your AI team.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap">
@@ -162,7 +162,7 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
   </header>
 
   <div class="hero">
-    <span class="eyebrow">Saturday, Nov 7 · Noon CT · Live on Zoom</span>
+    <span class="eyebrow">Your kit, three steps, at your own pace</span>
     <h1>You're <span class="band">in.</span></h1>
     <p class="lede">Your seat is saved. <b>Bookmark this page now</b> so you can come right back to it on class day. <b>Your Zoom link and license code are on their way to the email you used at checkout.</b></p>
     <a class="back" href="../">Back to class details</a>
@@ -209,11 +209,30 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
       <span class="fine" style="color:#B3B5BA">Either one works. Pick the one you already pay for.</span>
     </div>
     <ol class="build">
-      <li><div><b id="step-install-title">Install Claude Code</b><span id="step-install">Get it at <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a> and sign in with your Claude account. The Pro plan is enough.</span></div></li>
-      <li><div><b>Open a terminal</b><span id="step-open">Windows: open PowerShell. Mac: open Terminal. Type <code>claude</code> and press Enter.</span></div></li>
+      <li><div><b id="step-install-title">Install the Claude app</b><span id="step-install">Download it at <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> and sign in with your Claude account. The Code tab needs a paid plan, Pro is enough. No terminal, no commands.</span></div></li>
+      <li><div><b>Open it</b><span id="step-open">In the Claude app click the code icon (the second of the two little icons at the very top left), then + New. That is it, your kit makes its own AI Team folder.</span></div></li>
       <li><div><b>Paste your kit</b><span>Get your kit below with your license code, copy it, and paste the whole thing as your first message.</span></div></li>
       <li><div><b>Answer its questions</b><span>It asks one at a time: your name and email, where the team should live, what you do, how you talk, your rules. Then it builds everything and tells you how to start your Chief of Staff.</span></div></li>
     </ol>
+  </div>
+</section>
+
+<section style="padding-block: 8px 24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Watch these first</span>
+      <h2>Watch, paste, <span class="band">done.</span></h2>
+      <p>Step 1, the install video (6 minutes): one app, one paste, no terminal. Do it with the video paused next to you. Step 2, your kit below. Step 3, the class video (15 minutes): what your team is and what to have it do first.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;max-width:1200px">
+      <div>
+        <p class="eyebrow" style="margin:0 0 8px">1. The install</p>
+        <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000">
+          <iframe src="https://www.youtube-nocookie.com/embed/ns5DMZWfwbU" title="Install your AI team" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="fine" style="margin-top:8px"><a href="https://youtu.be/ns5DMZWfwbU" target="_blank" rel="noopener">Open on YouTube</a></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -222,7 +241,43 @@ footer { padding-block: 40px 56px; display: flex; flex-wrap: wrap; justify-conte
     <div class="ticket">
       <span class="eyebrow">Your install kit</span>
       <h2>Enter your <span class="band">license code.</span></h2>
-      <p>It's in your confirmation email and looks like FNP-FLEET-XXXX-XXXX. Enter it anytime to check your Zoom link before class or grab your personal install prompt once class starts on Saturday, Nov 7 at noon CT. Someone else wants a seat? Send them to <a href="../" style="color:var(--paper)">fnptrades.com/aiclass</a>.</p>
+      <p>It's in your confirmation email and looks like FNP-FLEET-XXXX-XXXX. Enter it to open your personal install kit. Someone else wants one? Send them to <a href="../" style="color:var(--paper)">fnptrades.com/aiclass</a>.</p>
+      <form class="codeform" id="codeform" autocomplete="off">
+        <input id="code" name="code" placeholder="FNP-FLEET-XXXX-XXXX" aria-label="License code" spellcheck="false" maxlength="24" required>
+        <button class="btn" type="submit">Get my kit</button>
+      </form>
+      <div class="status-line" id="status" aria-live="polite"></div>
+      <div id="zoombox" style="display:none;background:#1D1F24;border:2px solid #2C2D31;border-radius:14px;padding:14px 18px;font-size:15px;color:#F4F4F5;"></div>
+      <div class="kit" id="kit">
+        <textarea id="kittext" readonly aria-label="Your install kit"></textarea>
+        <div class="row">
+          <button class="btn small" type="button" id="copy">Copy the whole kit</button>
+          <span class="fine" style="color:#B3B3BA" id="paste-note">Then paste it into Claude Code as your first message.</span>
+        </div>
+      </div><div>
+        <p class="eyebrow" style="margin:0 0 8px">3. The class</p>
+        <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000">
+          <iframe src="https://www.youtube-nocookie.com/embed/hOY_udA1CPk" title="Build Your Own AI Team: the class" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="fine" style="margin-top:8px"><a href="https://youtu.be/hOY_udA1CPk" target="_blank" rel="noopener">Open on YouTube</a></p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin:0 0 8px">1. The install</p>
+        <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000">
+          <iframe src="https://www.youtube-nocookie.com/embed/ns5DMZWfwbU" title="Install your AI team" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="fine" style="margin-top:8px"><a href="https://youtu.be/ns5DMZWfwbU" target="_blank" rel="noopener">Open on YouTube</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-block: 24px 40px">
+  <div class="wrap">
+    <div class="ticket">
+      <span class="eyebrow">Your install kit</span>
+      <h2>Enter your <span class="band">license code.</span></h2>
+      <p>It's in your confirmation email and looks like FNP-FLEET-XXXX-XXXX. Enter it to open your personal install kit. Someone else wants one? Send them to <a href="../" style="color:var(--paper)">fnptrades.com/aiclass</a>.</p>
       <form class="codeform" id="codeform" autocomplete="off">
         <input id="code" name="code" placeholder="FNP-FLEET-XXXX-XXXX" aria-label="License code" spellcheck="false" maxlength="24" required>
         <button class="btn" type="submit">Get my kit</button>
@@ -258,10 +313,12 @@ function say(msg, cls) { statusEl.textContent = msg; statusEl.className = "statu
 
 // Claude Code or Codex (ChatGPT): same kit, the service swaps the command and the rulebook file name.
 var TOOLS = {
-  claude: { name: "Claude Code", cmd: "claude",
-            install: 'Get it at <a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a> and sign in with your Claude account. The Pro plan is enough.' },
-  codex:  { name: "Codex (ChatGPT)", cmd: "codex",
-            install: 'Install Node.js first from <a href="https://nodejs.org" target="_blank" rel="noopener">nodejs.org</a> (the LTS download), then in Terminal or PowerShell run <code>npm install -g @openai/codex</code>. Type <code>codex</code> and pick Sign in with ChatGPT (Plus or Pro). Docs: <a href="https://developers.openai.com/codex/cli" target="_blank" rel="noopener">developers.openai.com/codex/cli</a>.' }
+  claude: { name: "the Claude app", app: "Claude",
+            install: 'Download it at <a href="https://claude.ai/download" target="_blank" rel="noopener">claude.ai/download</a> and sign in with your Claude account. The Code tab needs a paid plan, Pro is enough. No terminal, no commands.',
+            open: 'In the Claude app click the code icon (the second of the two little icons at the very top left), then + New. That is it, your kit makes its own AI Team folder.' },
+  codex:  { name: "the Codex app", app: "Codex",
+            install: 'Mac: the Codex app from <a href="https://learn.chatgpt.com/docs/app" target="_blank" rel="noopener">learn.chatgpt.com/docs/app</a>. Windows: the ChatGPT app from the Microsoft Store (search ChatGPT), then pick Work above the message box. Sign in with your ChatGPT account (Plus or Pro). No terminal, no commands.',
+            open: 'In the app click Add new project and pick your Documents folder (it only needs a place to start; your kit makes its own AI Team folder). When it asks to approve something later, click Approve.' }
 };
 var TOOL = "claude";
 try { TOOL = localStorage.getItem("kit_tool") || "claude"; } catch (e) {}
@@ -270,8 +327,8 @@ function renderTool() {
   var t = TOOLS[TOOL];
   document.getElementById("step-install-title").textContent = "Install " + t.name;
   document.getElementById("step-install").innerHTML = t.install;
-  document.getElementById("step-open").innerHTML = "Windows: open PowerShell. Mac: open Terminal. Type <code>" + t.cmd + "</code> and press Enter.";
-  document.getElementById("paste-note").textContent = "Then paste it into " + t.name + " as your first message.";
+  document.getElementById("step-open").innerHTML = t.open;
+  document.getElementById("paste-note").textContent = "Then paste it into " + t.app + " as your first message and hit Enter.";
   var btns = document.querySelectorAll("#toolpick button");
   for (var i = 0; i < btns.length; i++) { btns[i].style.opacity = btns[i].getAttribute("data-tool") === TOOL ? "1" : "0.45"; }
 }
