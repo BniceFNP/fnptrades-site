@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://fnptrades.com/welcome/">
+<title>Welcome to PrintSquad | FNP Trades</title>
+<meta name="description" content="You're in. Connect your Discord on Whop so the bot can give you your role.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;600&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Where Whop sends a buyer right after checkout (product setting "Checkout redirect").
+   The Discord role only lands once the buyer connects Discord on Whop, so step 1 is that button.
+   ?p=rtp (RTP System) points at the Indicator Only role; ?p=bundle adds the indicator step;
+   no p = PrintSquad. Same look as the rest of the site. */
+:root{
+  --ground:#07090B; --ground-2:#0B0E12; --panel:#0E1216;
+  --t1:rgba(255,255,255,.94); --t2:rgba(255,255,255,.70); --t3:rgba(255,255,255,.50); --t4:rgba(255,255,255,.34);
+  --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --cyan:#2FE3F6; --mint:#B2EBF2;
+  --display:"Sora",ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  --body:"Hanken Grotesk",ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--t2);font:300 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:720px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2{font-family:var(--display);color:var(--t1);margin:0;text-wrap:balance}
+h1{font-weight:300;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:-.035em}
+h2{font-weight:400;font-size:20px;letter-spacing:-.01em}
+p{margin:0}
+.hdr{border-bottom:1px solid var(--line)}
+.hdr .wrap{padding-block:16px}
+.brand{font:400 15px/1 var(--display);color:var(--t1)}
+.brand s{text-decoration:none;color:var(--t4)}
+.hero{padding-block:clamp(40px,7vw,72px) 28px;background:radial-gradient(700px 360px at 80% 0%,rgba(47,227,246,.08),transparent 70%)}
+.hero .wrap{display:grid;gap:18px}
+.eyebrow{font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--t3);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+.lede{font-size:clamp(17px,2vw,20px);color:var(--t3)}
+.lede b{color:var(--t1);font-weight:500}
+.steps{display:grid;gap:16px;padding-bottom:28px}
+.step{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:22px;display:grid;gap:12px}
+.step.main{border-color:rgba(47,227,246,.45);box-shadow:0 0 0 1px rgba(47,227,246,.12),0 18px 50px -30px rgba(47,227,246,.5)}
+.num{font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.step p{font-size:16px;color:var(--t3)}
+.step p b{color:var(--t1);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 15.5px/1 var(--body);padding:16px 26px;border-radius:12px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease;justify-self:start}
+.btn-solid{background:#fff;color:#07090B}
+.btn-solid:hover{transform:translateY(-1px);background:var(--mint)}
+.btn-ghost{color:var(--t1);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--t3)}
+.help{border-top:1px solid var(--line);padding-block:24px 48px;display:grid;gap:12px;font-size:15px;color:var(--t3)}
+.help b{color:var(--t1);font-weight:500}
+[hidden]{display:none!important}
+@media (max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="wrap">
+  <a class="brand" href="https://fnptrades.com/">FNP Trades <s>/</s> PrintSquad</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Payment received</span>
+  <h1>You're in. One more step.</h1>
+  <p class="lede">Your Discord role <b>does not show up until you connect your Discord on Whop.</b> It takes about 30 seconds.</p>
+</div></section>
+
+<div class="wrap steps">
+  <div class="step main">
+    <span class="num">Step 1</span>
+    <h2>Connect your Discord</h2>
+    <p>Tap the button, then tap <b>Connect Discord</b> on the Whop page. Pick the Discord account you want in the server.</p>
+    <a class="btn btn-solid" id="connect" href="https://whop.com/masterthemarket/exp_Jn1isNXgQ0V50X/app/">Connect my Discord</a>
+  </div>
+
+  <div class="step">
+    <span class="num">Step 2</span>
+    <h2>Open Discord</h2>
+    <p>Whop adds you to the PrintSquad server and gives you your role. Then click the <b>&#x2705;</b> in <b>#verify</b> to open the rest of the channels.</p>
+  </div>
+
+  <div class="step" id="indicators" hidden>
+    <span class="num">Step 3</span>
+    <h2>Get your indicators</h2>
+    <p>Send your <b>TradingView username</b> on Whop so I can give you access to the RTP indicators.</p>
+    <a class="btn btn-ghost" href="https://whop.com/masterthemarket/exp_94DgmCRDMRpIVW/app/">TradingView access</a>
+  </div>
+</div>
+
+<div class="wrap help">
+  <p><b>Paid with Apple Pay or Sign in with Apple?</b> Sign in to Whop with Apple too. That way you land on the account that holds your purchase.</p>
+  <p><b>Still no role after 10 minutes?</b> Message me in the Whop chat and I'll get you in.</p>
+  <p>Anyone who DMs you claiming to be me with an offer is not me. Always check the profile.</p>
+</div>
+</main>
+
+<script>
+(function () {
+  var p = (new URLSearchParams(location.search).get("p") || "").toLowerCase();
+  if (p === "rtp") {
+    // RTP System and Indicators carries the Indicator Only role
+    document.getElementById("connect").href = "https://whop.com/masterthemarket/exp_ISEX1gKn84slw5/app/";
+  }
+  if (p === "rtp" || p === "bundle") document.getElementById("indicators").hidden = false;
+})();
+</script>
+</body>
+</html>
