@@ -14,7 +14,7 @@
 /* Where Whop sends a buyer right after checkout (product setting "Checkout redirect").
    The Discord role only lands once the buyer connects Discord on Whop, so step 1 is that button.
    ?p=rtp (RTP System) points at the Indicator Only role; ?p=bundle adds the indicator step;
-   no p = PrintSquad. Same look as the rest of the site. */
+   ?p=lite (PrintSquad Lite) points at the PrintSquad Lite role; no p = PrintSquad. Same look as the rest of the site. */
 :root{
   --ground:#07090B; --ground-2:#0B0E12; --panel:#0E1216;
   --t1:rgba(255,255,255,.94); --t2:rgba(255,255,255,.70); --t3:rgba(255,255,255,.50); --t4:rgba(255,255,255,.34);
@@ -107,6 +107,10 @@ p{margin:0}
   if (p === "rtp") {
     // RTP System and Indicators carries the Indicator Only role
     document.getElementById("connect").href = "https://whop.com/masterthemarket/exp_ISEX1gKn84slw5/app/";
+  }
+  if (p === "lite") {
+    // PrintSquad Lite ($30) carries the PrintSquad Lite role (Whop section "PrintSquad Lite Access")
+    document.getElementById("connect").href = "https://whop.com/masterthemarket/exp_TuuHZFkCEnG6nj/app/";
   }
   if (p === "rtp" || p === "bundle") document.getElementById("indicators").hidden = false;
 })();
