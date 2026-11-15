@@ -1,30 +1,30 @@
 {
- "updated": "2026-11-08T10:16:59Z",
+ "updated": "2026-11-15T06:25:33Z",
  "source": "ForexFactory calendar, USD, high impact",
  "events": [
   {
-   "title": "Core CPI m/m",
-   "date": "2026-11-10T08:30:00-05:00",
-   "forecast": "0.2%",
-   "previous": "0.3%"
+   "title": "Fed Chairman Warsh Speaks",
+   "date": "2026-11-16T12:00:00-05:00",
+   "forecast": "",
+   "previous": ""
   },
   {
-   "title": "CPI m/m",
-   "date": "2026-11-10T08:30:00-05:00",
-   "forecast": "0.3%",
-   "previous": "0.6%"
-  },
-  {
-   "title": "Core PPI m/m",
-   "date": "2026-11-13T08:30:00-05:00",
-   "forecast": "0.3%",
-   "previous": "0.7%"
-  },
-  {
-   "title": "PPI m/m",
-   "date": "2026-11-13T08:30:00-05:00",
+   "title": "Core Retail Sales m/m",
+   "date": "2026-11-17T08:30:00-05:00",
    "forecast": "0.4%",
-   "previous": "1.3%"
+   "previous": "0.9%"
+  },
+  {
+   "title": "Retail Sales m/m",
+   "date": "2026-11-17T08:30:00-05:00",
+   "forecast": "0.2%",
+   "previous": "0.8%"
+  },
+  {
+   "title": "FOMC Meeting Minutes",
+   "date": "2026-11-18T14:00:00-05:00",
+   "forecast": "",
+   "previous": ""
   }
  ]
 }
